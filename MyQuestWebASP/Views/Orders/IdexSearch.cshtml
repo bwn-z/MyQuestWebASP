@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MyQuestWebASP.Models.Order>
+
+@{
+    ViewBag.Title = "IdexSearch";
+}
+
+<h2>IdexSearch</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.StatusOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreateOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateLastModifOrder)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.StatusOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameClient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneClient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayClient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreateOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateLastModifOrder)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+        </td>
+    </tr>
+}
+
+</table>

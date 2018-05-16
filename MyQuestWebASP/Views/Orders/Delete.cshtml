@@ -1,0 +1,72 @@
+﻿@model MyQuestWebASP.Models.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.StatusOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PayClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreateOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreateOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLastModifOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLastModifOrder)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

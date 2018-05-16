@@ -1,0 +1,66 @@
+﻿@model MyQuestWebASP.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.StatusOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PayClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreateOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreateOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLastModifOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLastModifOrder)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

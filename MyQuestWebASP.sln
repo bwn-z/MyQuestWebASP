@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyQuestWebASP", "MyQuestWebASP\MyQuestWebASP.csproj", "{D592ACCC-3E8C-40AF-9526-A3DEF50559A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDNTutorial", "MSDNTutorial\MSDNTutorial.csproj", "{D6766263-00D2-426F-AC2F-8844CD188593}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D592ACCC-3E8C-40AF-9526-A3DEF50559A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D592ACCC-3E8C-40AF-9526-A3DEF50559A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D592ACCC-3E8C-40AF-9526-A3DEF50559A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D592ACCC-3E8C-40AF-9526-A3DEF50559A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6766263-00D2-426F-AC2F-8844CD188593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6766263-00D2-426F-AC2F-8844CD188593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6766263-00D2-426F-AC2F-8844CD188593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6766263-00D2-426F-AC2F-8844CD188593}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20595E87-214F-434F-8B16-CC160A536B88}
+	EndGlobalSection
+EndGlobal

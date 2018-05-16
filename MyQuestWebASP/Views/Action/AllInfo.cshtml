@@ -1,0 +1,83 @@
+﻿@using System.Collections
+
+@{
+    ViewBag.Title = "Информация";
+@model IEnumerable<MyQuestWebASP.Models.Order>
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View.Title</title>
+</head>
+<body>
+    <h2>@ViewBag.Title</h2>
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <table>
+                    <tr>
+                        <td>
+                            <p class="col-md-4">Номер заказа</p>
+                        </td>
+                        <td>
+                            <p class="col-md-4">Имя клиента</p>
+                        </td>
+                        <td>
+                            <p class="col-md-4">Номер телефона</p>
+                        </td>
+                        <td>
+                            <p class="col-md-4">Сумма</p>
+                        </td>
+                        <td>
+                            <p class="col-md-4">Дата создания</p>
+                        </td>
+                        <td>
+                            <p class="col-md-4">Статус</p>
+                        </td>
+                        <td>
+                            <p class="col-md-4">Последнее изменение</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    @foreach (var ords in Model)
+                    {
+                        <tr>
+                            <td>
+                                <p class="col-md-4">@ords.OrderId</p>
+                            </td>
+                            <td>
+                                <p class="col-md-4">@ords.NameClient</p>
+                            </td>
+                            <td>
+                                <p class="col-md-4">@ords.PhoneClient</p>
+                            </td>
+                            <td>
+                                <p class="col-md-4">@ords.PayClient</p>
+                            </td>
+                            <td>
+                                <p class="col-md-4">@ords.DateCreateOrder</p>
+                            </td>
+                            <td>
+                                <p class="col-md-4">@ords.Statuses.StatusOrder</p>
+                            </td>
+                            <td>
+                                <p class="col-md-4">@ords.DateLastModifOrder</p>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
