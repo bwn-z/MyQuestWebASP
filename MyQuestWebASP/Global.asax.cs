@@ -16,7 +16,7 @@ namespace MyQuestWebASP
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
+           // Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
             //Database.SetInitializer(new OriginDbInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

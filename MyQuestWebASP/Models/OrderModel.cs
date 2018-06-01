@@ -32,12 +32,17 @@ namespace MyQuestWebASP.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}")]
         public  DateTime OrderLastModifDateTime { get; set; }
 
-        [Display(Name = "Услуга:")]
-        public int ServiceId { get; set; }
+        [Display(Name = "Услуги:")]
+        //public int ServiceId { get; set; }
         
-        //public virtual  ICollection<Service> services { get; set; }
+        public virtual  ICollection<Service> services { get; set; }
         [Display(Name="Количество:")]
         public int QuantityItem { get; set; }
         public Service Service { get; set; }
+
+        public OrderModel()
+        {
+            services=new List<Service>();
+        }
     }
 }

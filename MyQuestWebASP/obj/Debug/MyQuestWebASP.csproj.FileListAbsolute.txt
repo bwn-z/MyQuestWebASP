@@ -140,3 +140,4 @@ c:\users\colln\source\repos\MyQuestWebASP\MyQuestWebASP\obj\Debug\MyQuestWebASP.
 C:\Users\colln\source\repos\MyQuestWebASP\MyQuestWebASP\obj\Debug\MyQuestWebASP.Migrations.NewMig.resources
 C:\Users\colln\source\repos\MyQuestWebASP\MyQuestWebASP\obj\Debug\MyQuestWebASP.csproj.GenerateResource.cache
 C:\Users\colln\source\repos\MyQuestWebASP\MyQuestWebASP\obj\Debug\MyQuestWebASP.Migrations.NewMigration.resources
+C:\Users\colln\source\repos\MyQuestWebASP\MyQuestWebASP\obj\Debug\MyQuestWebASP.Migrations.NewMig1.resources

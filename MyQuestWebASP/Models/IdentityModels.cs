@@ -30,8 +30,6 @@ namespace MyQuestWebASP.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-           
-
             modelBuilder.Entity<Status>().HasKey(x => x.StatusId);
             modelBuilder.Entity<Category>().HasKey(x => x.CategoryId);
             modelBuilder.Entity<Service>().HasKey(x => x.ServiceId);

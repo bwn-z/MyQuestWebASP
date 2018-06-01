@@ -25,8 +25,12 @@ namespace MyQuestWebASP.Controllers
         [HttpGet]
         public ActionResult CreateOrder()
         {
-            var ordModel= new OrderModel();
-SelectList category = new SelectList(db.Categories, "CategoryId", "TypeCategory");
+
+            var ordModel = new OrderModel();
+            SelectList status = new SelectList(db.Statuses, "StatusId", "StatusOrder");
+            SelectList category = new SelectList(db.Categories, "CategoryId", "TypeCategory");
+            ViewBag.Services = db.Services.ToList();
+            ViewBag.Status = status;
             ViewBag.Category = category;
             return View(ordModel);
 
@@ -35,13 +39,13 @@ SelectList category = new SelectList(db.Categories, "CategoryId", "TypeCategory"
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateOrder(OrderModel ordModel)
+        public ActionResult CreateOrder(OrderModel ordModel, int[] selectedServices)
         {
             if (ModelState.IsValid)
             {
                 Order ord = new Order()
                 {
-                    
+
                     NameClient = ordModel.NameClient,
                     PhoneClient = ordModel.PhoneNumbClient,
                     PayClient = ordModel.ClientPayForOrder,
@@ -50,19 +54,31 @@ SelectList category = new SelectList(db.Categories, "CategoryId", "TypeCategory"
                     DateLastModifOrder = getDateTime()
                 };
                 db.Orders.Add(ord);
-               var lastInsertId = ord.OrderId;
+                var lastInsertId = ord.OrderId;
                 db.SaveChanges();
-                ServiceForOrder servForOrder = new ServiceForOrder()
+                if (selectedServices != null)
                 {
-                    OrderId = ord.OrderId,
-                    ServiceId = ordModel.ServiceId,
-                        //Convert.ToInt32(ordModel.services.First()),
-                    QuantityService = ordModel.QuantityItem
-                };
+                    
+                    foreach (var c in db.Services.Where(c=>selectedServices.Contains(c.ServiceId)))
+                    {
+                        ServiceForOrder servForOrder = new ServiceForOrder();
+                        servForOrder.OrderId = ord.OrderId;
+                        servForOrder.ServiceId = c.ServiceId;
+                        servForOrder.QuantityService = 1;
+                        db.ServicesForOrder.Add(servForOrder);
+                    }
 
-                
-                db.ServicesForOrder.Add(servForOrder);
-                db.SaveChanges();
+                    //ServiceForOrder servForOrder = new ServiceForOrder()
+                    //{
+
+                    //    OrderId = ord.OrderId,
+                    //    //ServiceId = ordModel.ServiceId,
+                    //    //Convert.ToInt32(ordModel.services.First()),
+                    //    QuantityService = ordModel.QuantityItem
+                    //};
+                    
+                    db.SaveChanges();
+                }
 
                 return Redirect("Index");
             }
@@ -81,7 +97,7 @@ SelectList category = new SelectList(db.Categories, "CategoryId", "TypeCategory"
             StatusList.AddRange(StatusQry.Distinct());
 
             ViewBag.statusOrder = new SelectList(StatusList, "done");
-            
+
             var order = db.Orders.Select(t => t).Include(s => s.Status);
 
             if (!String.IsNullOrEmpty(searchString))
